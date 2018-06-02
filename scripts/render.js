@@ -1,6 +1,8 @@
-const Highcharts = require('highcharts');
+const Highcharts = require('highcharts')
+// const babyData = require('./data')
+const dataPrep = require('./dataPrep')
 // Load module after Highcharts is loaded
-require('highcharts/modules/exporting')(Highcharts);
+require('highcharts/modules/exporting')(Highcharts)
 
 const myChart = () => {
   Highcharts.chart('container', {
@@ -11,7 +13,7 @@ const myChart = () => {
       text: 'Fruit Consumption'
     },
     xAxis: {
-      categories: ['Apples', 'Bananas', 'Oranges']
+      categories: ['Mango', 'Bananas', 'Oranges']
     },
     yAxis: {
       title: {
@@ -28,11 +30,16 @@ const myChart = () => {
   })
 }
 
+const dayPlot = (babyName, date) => {
+  const dayData = dataPrep.prepareDailyData(babyName, date)
+}
+
 function test() {
   return 'hi'
 }
 
 module.exports = {
   test,
-  myChart
+  myChart,
+  dayPlot
 }
