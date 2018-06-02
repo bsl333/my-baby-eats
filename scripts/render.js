@@ -31,7 +31,30 @@ const myChart = () => {
 }
 
 const dayPlot = (babyName, date) => {
-  const dayData = dataPrep.prepareDailyData(babyName, date)
+  const { xAxis, yAxis, title } = dataPrep.prepareDailyData(babyName, date)
+  console.log(title)
+  Highcharts.chart('container', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: title
+    },
+    xAxis: {
+      categories: xAxis
+    },
+    yAxis: {
+      title: {
+        text: 'Formula Consumed (Oz)'
+      }
+    },
+    series: [
+      {
+        name: babyName,
+        data: yAxis
+      }
+    ]
+  })
 }
 
 function test() {

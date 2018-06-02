@@ -17,23 +17,60 @@ const data = [
           },
           {
             time: '2:00 PM',
-            formulaQty: 0,
+            formulaQty: 1,
             solidFoods: [ 'chicken' ]
           },
           {
             time: '6:00 PM',
-            formulaQty: 4,
+            formulaQty: 5,
             solidFoods: [ 'chicken' ]
           },
           {
             time: '9:00 PM',
-            formulaQty: 8,
+            formulaQty: 4,
             solidFoods: [ 'chicken' ]
           },
         ],
         overAllMood: 'Happy',
         notes: 'He was happy all day and slept well'
-      }    
+      },
+      {
+        date: '01-02-2018',
+        foodIntake: [
+          {
+            time: '09:00 AM',
+            formulaQty: 2.5,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 3,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '02:00 PM',
+            formulaQty: 1,
+            solidFoods: [ 'egg' ]
+          },
+          {
+            time: '06:00 PM',
+            formulaQty: 5,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '09:00 PM',
+            formulaQty: 4,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 4,
+            solidFoods: [ '' ]
+          },
+        ],
+        overAllMood: 'Fussy',
+        notes: 'Cried more than usual - did not nap well'
+      }   
     ]
   },
 
