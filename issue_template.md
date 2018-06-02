@@ -1,9 +1,9 @@
-##Narative##
+### Narative ###
 **As a Dev I need to:**
 
 **So my app can perform:**
 
 
-**Assumptions**
+### Assumptions ###
 
-**Completed When**
+### Completed When ###
