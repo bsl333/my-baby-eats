@@ -31,11 +31,12 @@ const myChart = () => {
 }
 
 const dayPlot = (babyName, date) => {
-  const { xAxis, yAxis, title } = dataPrep.prepareDailyData(babyName, date)
+  const { xAxis, yAxis, title, error } = dataPrep.prepareDailyData(babyName, date)
   console.log(title)
-  Highcharts.chart('container', {
+  if (error) return 'BABY NOT FOUND!'
+  Highcharts.chart('container-daily', {
     chart: {
-      type: 'column'
+      type: 'line'
     },
     title: {
       text: title
@@ -45,6 +46,7 @@ const dayPlot = (babyName, date) => {
     },
     yAxis: {
       title: {
+        start: 0,
         text: 'Formula Consumed (Oz)'
       }
     },
@@ -57,12 +59,48 @@ const dayPlot = (babyName, date) => {
   })
 }
 
-function test() {
-  return 'hi'
+const weeklyPlot = (babyName, startDate) => {
+  const { xAxis, yAxis, title, error } = dataPrep.prepareWeeklyData(babyName, startDate)
+  if (error) return 'BABY NOT FOUND!'
+  Highcharts.chart('container-weekly', {
+    chart: {
+      type: 'line'
+    },
+    title: {
+      text: title
+    },
+    xAxis: {
+      categories: xAxis
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Formula Consumed (Oz)'
+      },
+    },
+
+    // plotOptions: {
+    //   series: {
+    //       label: {
+    //           connectorAllowed: false
+    //       },
+    //       pointStart: 0
+    //   }
+    // },
+
+    series: [
+      {
+        name: babyName,
+        data: yAxis
+      }
+    ]
+  })
+
 }
 
+
 module.exports = {
-  test,
   myChart,
-  dayPlot
+  dayPlot,
+  weeklyPlot
 }

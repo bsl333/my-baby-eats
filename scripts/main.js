@@ -2,7 +2,8 @@ const render = require('./render')
 const dateFormat = require('dateformat')
 
 // render.myChart()
-console.log(render.dayPlot('Grayson', '01-01-2018'))
+console.log(render.dayPlot('Grayson', '01-04-2018'))
+console.log(render.weeklyPlot('Grayson', '01-01-2018'))
 
 // const now = new Date()
 // console.log(now)

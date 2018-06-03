@@ -70,7 +70,83 @@ const data = [
         ],
         overAllMood: 'Fussy',
         notes: 'Cried more than usual - did not nap well'
-      }   
+      },
+      
+      {
+        date: '01-03-2018',
+        foodIntake: [
+          {
+            time: '09:00 AM',
+            formulaQty: 2.5,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 3,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '02:00 PM',
+            formulaQty: 1,
+            solidFoods: [ 'egg' ]
+          },
+          {
+            time: '06:00 PM',
+            formulaQty: 5,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '09:00 PM',
+            formulaQty: 4,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 4,
+            solidFoods: [ '' ]
+          },
+        ],
+        overAllMood: 'Fussy',
+        notes: 'Cried more than usual - did not nap well'
+      },
+
+      {
+        date: '01-04-2018',
+        foodIntake: [
+          {
+            time: '09:00 AM',
+            formulaQty: 3,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 1,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '02:00 PM',
+            formulaQty: 5,
+            solidFoods: [ 'egg' ]
+          },
+          {
+            time: '06:00 PM',
+            formulaQty: 5,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '09:00 PM',
+            formulaQty: 2,
+            solidFoods: [ '' ]
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 8,
+            solidFoods: [ '' ]
+          },
+        ],
+        overAllMood: 'Fussy',
+        notes: 'Cried more than usual - did not nap well'
+      } 
     ]
   },
 
