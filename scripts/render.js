@@ -30,7 +30,7 @@ const myChart = () => {
   })
 }
 
-const dayPlot = (babyName, date) => {
+const dayPlot = (babyName, date='1-1-2018') => {
   const { xAxis, yAxis, title, error } = dataPrep.prepareDailyData(babyName, date)
   console.log(title)
   if (error) return 'BABY NOT FOUND!'
@@ -85,16 +85,6 @@ const weeklyPlot = (babyName, daysBack) => {
         text: 'Formula Consumed (Oz)'
       },
     },
-
-    // plotOptions: {
-    //   series: {
-    //       label: {
-    //           connectorAllowed: false
-    //       },
-    //       pointStart: 0
-    //   }
-    // },
-
     series: [
       {
         name: babyName,
@@ -102,13 +92,21 @@ const weeklyPlot = (babyName, daysBack) => {
       }
     ]
   })
-
 }
+
+  const updatePlot = (babyName, data, date) => {
+    dataPrep.updateData(babyName, data, date)
+    // weeklyPlot(babyName, 7)
+    dayPlot(babyName, date)
+  }
+
+
 
 
 
 module.exports = {
   myChart,
   dayPlot,
-  weeklyPlot
+  weeklyPlot,
+  updatePlot
 }
