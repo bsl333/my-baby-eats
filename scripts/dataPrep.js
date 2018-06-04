@@ -36,7 +36,6 @@ function prepareDailyData(babyName, date) {
 // }
 
 function prepareLastXDaysData (babyName, daysBack) {
-
   const dailyBehavior = getDailyBehavior(babyName)
   if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
   const weeklyBehavior = dailyBehavior.slice(-1 * daysBack)
