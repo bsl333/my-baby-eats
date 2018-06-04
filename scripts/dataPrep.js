@@ -79,11 +79,13 @@ function updateData(babyName, data, date) {
   const dailyBehavior = getDailyBehavior(babyName)
   let dayBehavior = dailyBehavior.find(val => val.date === date)
   if (dayBehavior) {
-    dayBehavior.foodIntake.push(data)
+    dayBehavior.foodIntake.push(data.foodIntake)
   } else {
     dayBehavior = { }
     dayBehavior['date'] = date
-    dayBehavior['foodIntake'] = [ data ]
+    dayBehavior['foodIntake'] = [ data.foodIntake ]
+    dayBehavior['overAllMood'] = data.mood
+    dailyBehavior['notes'] =  data.notes
     dailyBehavior.push(dayBehavior)
   }
 

@@ -17,13 +17,14 @@ console.log(render.dayPlot('Grayson', '5-27-2018'))
 
 const buttons = Array.from(document.querySelectorAll('.btn-outline-primary'))
 const form = document.getElementById('user-input')
+const radioBtns = Array.from(document.querySelectorAll('.radio-group'))
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     const daysBack = +btn.textContent.trim().split(' ')[0]
+    const date = dateFormat(new Date(), 'm-d-yyyy')
     daysBack > 1 ? render.weeklyPlot(babyName, daysBack) :
-      render.dayPlot(babyName, '1-4-2018')
-    // render.weeklyPlot(babyName, daysBack) 
+      render.dayPlot(babyName, date)
     buttons.forEach(btn => {
       btn.classList.remove('active')
     })
@@ -40,11 +41,24 @@ form.addEventListener('submit', (event) => {
   const mood = event.target.mood.value
   const formulaQty = +event.target['qty-consumed'].value
   const solidFoods = event.target['solids-consumed'].value.split(',')
-  console.log(solidFoods)
-
-  const dataObj = { time, formulaQty, solidFoods }
+  const notes = event.target.notes.textContent
+  const dataObj = { 
+    foodIntake: {
+      time, 
+      formulaQty,
+      solidFoods
+    },
+    mood,
+    notes
+  }
   render.updatePlot(babyName, dataObj, date)
+})
 
+radioBtns.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    radioBtns.forEach(btn => btn.style.color = 'black')
+    btn.style.color = 'pink'
+  })
 })
 
 
