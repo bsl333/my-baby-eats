@@ -6,7 +6,7 @@ function prepareDailyData(babyName, date) {
   const foodIntake = getFoodIntakeOnDate(babyName, date)
   const xAxis = []
   const yAxis = []
-  const title = `${date} Formula Consumption for ${babyName}`
+  const title = `${date} Formula Consumption for ${babyName} <h1 style="color: pink;">test</h1>`
   foodIntake.forEach(foodObj => {
     xAxis.push(foodObj.time)
     yAxis.push(foodObj.formulaQty)
@@ -31,11 +31,36 @@ function prepareWeeklyData(babyName, startDate) {
     yAxis.push(formulaConsumed)
   })
   const title = `${xAxis[0].slice(0,5)} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
-  console.log(xAxis, yAxis, title)
   const highchartsPlotObj = { xAxis, yAxis, title }
   return highchartsPlotObj
+}
 
-  
+function prepareLastXDaysData (babyName, daysBack) {
+  const dailyBehavior = getDailyBehavior(babyName)
+  if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
+  const weeklyBehavior = dailyBehavior.slice(-1 * daysBack)
+
+  const xAxis = []
+  const yAxis = []
+  let solidFoods = []
+
+  weeklyBehavior.forEach(day => {
+    xAxis.push(day.date)
+    const formulaConsumed = day.foodIntake
+      .map(val => val.formulaQty)
+      .reduce((accum, total) => accum + total)
+    yAxis.push(formulaConsumed)
+    const solidFoodsArr = day.foodIntake
+      .map(val => val.solidFoods)
+    // find unique solid foods and push onto solid food array
+    solidFoodsArr.forEach(val => {
+      val.forEach(food => food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
+    })
+  })
+
+  const title = `${xAxis[0].slice(0,5)} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
+
+  return { xAxis, yAxis, title, solidFoods}
 
 }
 
@@ -63,6 +88,7 @@ function getFoodIntakeOnDate(babyName, date) {
 
 module.exports = {
   prepareDailyData,
-  prepareWeeklyData
+  prepareWeeklyData,
+  prepareLastXDaysData
 }
 
