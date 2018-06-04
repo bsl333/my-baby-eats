@@ -68,7 +68,6 @@ const weeklyPlot = (babyName, daysBack) => {
     solidFoods 
   } = dataPrep.prepareLastXDaysData(babyName, daysBack)
 
-  console.log(solidFoods)
   if (error) return 'BABY NOT FOUND!'
   Highcharts.chart('charts-container', {
     chart: {

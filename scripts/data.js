@@ -196,7 +196,7 @@ const data = [
           },
           {
             time: '11:45 AM',
-            formulaQty: 1,
+            formulaQty: 6,
             solidFoods: ['']
           },
           {
