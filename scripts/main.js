@@ -3,7 +3,7 @@ const dateFormat = require('dateformat')
 const babyName = 'Grayson'
 
 // render.myChart()
-console.log(render.dayPlot('Grayson', '1-4-2018'))
+console.log(render.dayPlot('Grayson', '5-27-2018'))
 // console.log(render.weeklyPlot(babyName, 7))
 
 // const now = new Date()
@@ -39,7 +39,8 @@ form.addEventListener('submit', (event) => {
   
   const mood = event.target.mood.value
   const formulaQty = +event.target['qty-consumed'].value
-  const solidFoods = ['Corn']
+  const solidFoods = event.target['solids-consumed'].value.split(',')
+  console.log(solidFoods)
 
   const dataObj = { time, formulaQty, solidFoods }
   render.updatePlot(babyName, dataObj, date)

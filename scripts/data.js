@@ -3,7 +3,7 @@ const data = [
     name: 'Grayson',
     dailyBehavior: [
       {
-        date: '1-1-2018',
+        date: '5-27-2018',
         foodIntake: [
           {
             time: '7:00 AM',
@@ -35,7 +35,7 @@ const data = [
         notes: 'He was happy all day and slept well'
       },
       {
-        date: '1-2-2018',
+        date: '5-28-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -73,7 +73,7 @@ const data = [
       },
 
       {
-        date: '1-3-2018',
+        date: '5-29-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -111,7 +111,7 @@ const data = [
       },
 
       {
-        date: '1-4-2018',
+        date: '5-30-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -149,7 +149,7 @@ const data = [
       },
 
       {
-        date: '1-5-2018',
+        date: '5-31-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -187,7 +187,7 @@ const data = [
       },
 
       {
-        date: '1-6-2018',
+        date: '6-1-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -225,7 +225,7 @@ const data = [
       },
 
       {
-        date: '1-7-2018',
+        date: '6-2-2018',
         foodIntake: [
           {
             time: '9:00 AM',
@@ -263,7 +263,7 @@ const data = [
       },
 
       {
-        date: '1-8-2018',
+        date: '6-3-2018',
         foodIntake: [
           {
             time: '9:00 AM',
