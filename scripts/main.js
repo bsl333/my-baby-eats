@@ -23,11 +23,11 @@ buttons.forEach(btn => {
     console.log(daysBack > 1)
     daysBack > 1 ? render.weeklyPlot(babyName, daysBack) :
       render.dayPlot(babyName, '1-4-2018')
-    render.weeklyPlot(babyName, daysBack) 
+    // render.weeklyPlot(babyName, daysBack) 
     buttons.forEach(btn => {
-      btn.removeAttribute('hidden')
+      btn.classList.remove('active')
     })
-    btn.setAttribute('hidden', '')
+    btn.classList.add('active')
   })
 })
 
