@@ -18,17 +18,17 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
           {
             time: '9:00 PM',
             formulaQty: 4,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
         ],
         overAllMood: 'Happy',
@@ -50,7 +50,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['egg']
+            solidFoods: ['Eggs']
           },
           {
             time: '6:00 PM',
@@ -88,7 +88,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['egg']
+            solidFoods: ['Eggs']
           },
           {
             time: '6:00 PM',
@@ -126,7 +126,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['egg']
+            solidFoods: ['Eggs']
           },
           {
             time: '6:00 PM',
@@ -164,7 +164,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['egg']
+            solidFoods: ['Eggs']
           },
           {
             time: '6:00 PM',
@@ -240,7 +240,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Sweet potatoe']
+            solidFoods: ['Sweet Potatoe']
           },
           {
             time: '6:00 PM',
@@ -278,7 +278,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['egg']
+            solidFoods: ['Eggs']
           },
           {
             time: '6:00 PM',
@@ -321,17 +321,17 @@ const data = [
           {
             time: '1:00 PM',
             formulaQty: 0,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
           {
             time: '4:00 PM',
             formulaQty: 4,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
           {
             time: '7:30 PM',
             formulaQty: 8,
-            solidFoods: ['chicken']
+            solidFoods: ['Chicken']
           },
         ],
         overAllMood: 'Happy',

@@ -54,11 +54,11 @@ function prepareLastXDaysData (babyName, daysBack) {
       .map(val => val.solidFoods)
     // find unique solid foods and push onto solid food array
     solidFoodsArr.forEach(val => {
-      val.forEach(food => food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
+      val.forEach(food => 
+        food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
     })
   })
-
-  const title = `${xAxis[0].slice(0,5)} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
+  const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
 
   return { xAxis, yAxis, title, solidFoods}
 

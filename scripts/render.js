@@ -34,7 +34,7 @@ const dayPlot = (babyName, date) => {
   const { xAxis, yAxis, title, error } = dataPrep.prepareDailyData(babyName, date)
   console.log(title)
   if (error) return 'BABY NOT FOUND!'
-  Highcharts.chart('container-daily', {
+  Highcharts.chart('charts-container', {
     chart: {
       type: 'line'
     },
@@ -70,7 +70,7 @@ const weeklyPlot = (babyName, daysBack) => {
 
   console.log(solidFoods)
   if (error) return 'BABY NOT FOUND!'
-  Highcharts.chart('container-weekly', {
+  Highcharts.chart('charts-container', {
     chart: {
       type: 'line'
     },
