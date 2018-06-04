@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Oswald');
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin-bottom: 60px;
+}
+
+.header-text {
+  font-family: Lobster, cursive;
+  color: lightskyblue;
+  font-size: 40px;
+}
+
+.sticky-footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+}
+
+.fa-heart {
+  color: pink; 
+}
+
+.radio-group {
+  display:inline-block;
+  text-align:center;
+}
+.radio-group label {
+  display:block;
+}
+
+.btn-info {
+  background-color: skyblue;
+  color: skyblue;
+}
