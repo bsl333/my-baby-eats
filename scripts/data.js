@@ -299,6 +299,44 @@ const data = [
         overAllMood: 'Fussy',
         notes: 'Cried more than usual - did not nap well'
       },
+      
+      {
+        date: '6-4-2018',
+        foodIntake: [
+          {
+            time: '9:00 AM',
+            formulaQty: 3,
+            solidFoods: ['']
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 1,
+            solidFoods: ['']
+          },
+          {
+            time: '2:00 PM',
+            formulaQty: 5,
+            solidFoods: ['Eggs']
+          },
+          {
+            time: '6:00 PM',
+            formulaQty: 5,
+            solidFoods: ['']
+          },
+          {
+            time: '9:00 PM',
+            formulaQty: 2,
+            solidFoods: ['']
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 8,
+            solidFoods: ['']
+          },
+        ],
+        overAllMood: 'Happy',
+        notes: 'Happy baby today!'
+      }
     ]
   },
 
