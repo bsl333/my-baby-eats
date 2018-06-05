@@ -24,7 +24,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-2">
-          <h4 class="h4-text">See data from the last</h4>
+          <h4 class="title-text">See data from the last</h4>
           <button class="btn btn-outline-primary btn-sm mt-2 mb-3 active">
             1 day
           </button>
@@ -45,60 +45,73 @@
             90 days
           </button>
         </div>
-        <div class="col-7">
-          <div id="charts-container" style="width:100%; height: 350px;"></div>
+        <div class="col-8">
+          <div id="charts-container" style="width:100%; height: 335px;"></div>
         </div>
 
-        <div class="col-3" id="solid-food-section" class="text-center">
-          <h4 class="h4-text">Additional Info/Solid Foods</h4>
+        <div class="col-2" id="solid-food-section" class="text-center">
+          <h4 class="title-text">Additional Info/Solid Foods</h4>
           <ul id="solid-food-list">
 
           </ul>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class=" col-6">
+        <div class="col-6">
           <form id="user-input">
             <fieldset>
-              <legend>Input childs's behaviour information</legend>
-              <div class="mt-2">
-                <label for="qty-consumed">Formula Consumed</label>
-                <input type="number" name="qty-consumed" id="qty-consumed" required min="0"> Ounces
-                <br>
-                <label for="solids-consumed">Solid Food Consumed</label>
-                <input type="text" name="solids-consumed" id="solids-consumed">
-              </div>
-              <div class="mt-3" id="radio-buttons">
-                <p>Overall mood for the day</p>
-                <div class="radio-group">
-                  <label for="happy">
-                    <i class="far fa-smile fa-3x mx-3" aria-hidden="true"></i>
-                  </label>
-                  <input type="radio" name="mood" id="happy" value="happy">
+              <div class="form-row">
+                <legend class="text-center title-text">Input child's behaviour information</legend>
+                <div class="col-6 form-group">
+                  <div class=>
+                    <label for="qty-consumed">Formula Consumed</label>
+                    <input type="number" name="qty-consumed" id="qty-consumed" required min="0" class="form-control">
+                    <!-- <br> -->
+                  </div>
                 </div>
-
-                <div class="radio-group mx-3">
-                  <label for="meh">
-                    <i class="class far fa-meh fa-3x"></i>
-                  </label>
-                  <input type="radio" name="mood" id="meh" value="meh">
-                </div>
-
-                <div class="radio-group ml-3">
-                  <label for="fussy">
-                    <i class="far fa-frown fa-3x"></i>
-                  </label>
-                  <input type="radio" name="mood" id="fussy" value="fussy">
+                <div class="col-6 form-group">
+                  <label for="solids-consumed">Solid Food Consumed</label>
+                  <input type="text" name="solids-consumed" id="solids-consumed" class="form-control">
                 </div>
               </div>
-              <div class="mt-4">
-                <p>Additional Notes: </p>
-                <label for="notes"></label>
-                <textarea name="" id="notes" cols="20" rows="3" style="width: 100%;" style="padding: 1000px"></textarea>
+              <div class="form-row">
+                <div class="col-6 mx-auto">
+                    <label>Overall mood for the day</label>
+                  <div id="radio-buttons">
+                    <div class="radio-group">
+                      <label for="happy">
+                        <i class="far fa-smile fa-3x" aria-hidden="true"></i>
+                      </label>
+                      <input type="radio" name="mood" id="happy" value="happy">
+                    </div>
+  
+                    <div class="radio-group mx-4">
+                      <label for="meh">
+                        <i class="class far fa-meh fa-3x"></i>
+                      </label>
+                      <input type="radio" name="mood" id="meh" value="meh">
+                    </div>
+  
+                    <div class="radio-group">
+                      <label for="fussy">
+                        <i class="far fa-frown fa-3x"></i>
+                      </label>
+                      <input type="radio" name="mood" id="fussy" value="fussy">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="notes">Additional Notes:</label>
+                    <textarea name="" id="notes" cols="3" rows="2" class="form-control"></textarea>
+                  </div>
+                </div>
               </div>
-              <div>
-                <button type="submit" class="btn btn-primary mt-3 mx-auto">Submit data!</button>
+              <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary">Submit data!
+                </button>
               </div>
+              <!-- </div> -->
             </fieldset>
           </form>
         </div>
@@ -107,14 +120,14 @@
   </main>
 
 
-  <!-- 
+
   <footer class="sticky-footer text-center">
     <p>Made with
       <i class="fa fa-heart fa-lg"></i> by
       <a href="http://b-lowe.personal-portfolio.surge.sh/" target="_blank">Branden</a> ~ and a little
       <i class="fa fa-coffee fa-lg"></i>
     </p>
-  </footer> -->
+  </footer>
 </body>
 
 </html>
