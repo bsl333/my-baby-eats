@@ -17,9 +17,9 @@ body {
 .sticky-footer {
   position: absolute;
   bottom: 0;
-  height: 60px;
+  height: 30px;
   width: 100%;
-  line-height: 60px;
+  line-height: 30px;
 }
 
 .fa-heart {
@@ -34,7 +34,7 @@ body {
   display:block;
 }
 
-.h4-text {
+.title-text {
   font-family: Lobster;
   color: skyblue;
 }
