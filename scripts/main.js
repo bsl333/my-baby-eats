@@ -51,7 +51,7 @@ form.addEventListener('submit', (event) => {
     mood,
     notes
   }
-  render.updatePlot(babyName, dataObj, date)
+  render.updatePlot(babyName, date, dataObj)
 })
 
 radioBtns.forEach(btn => {

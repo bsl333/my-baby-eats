@@ -75,17 +75,17 @@ function getFoodIntakeOnDate(babyName, date) {
   return foodIntake ? foodIntake.foodIntake : null
 }
 
-function updateData(babyName, data, date) {
+function updateData(babyName, date, { foodIntake, mood, notes }) {
   const dailyBehavior = getDailyBehavior(babyName)
   let dayBehavior = dailyBehavior.find(val => val.date === date)
   if (dayBehavior) {
-    dayBehavior.foodIntake.push(data.foodIntake)
+    dayBehavior.foodIntake.push(foodIntake)
   } else {
-    dayBehavior = { }
-    dayBehavior['date'] = date
-    dayBehavior['foodIntake'] = [ data.foodIntake ]
-    dayBehavior['overAllMood'] = data.mood
-    dailyBehavior['notes'] =  data.notes
+    dayBehavior = { date, 'foodIntake': [ foodIntake ], mood, notes  }
+    // dayBehavior['date'] = date
+    // dayBehavior['foodIntake'] = [ data.foodIntake ]
+    // dayBehavior['overAllMood'] = data.mood
+    // dailyBehavior['notes'] =  data.notes
     dailyBehavior.push(dayBehavior)
   }
 

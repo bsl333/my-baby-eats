@@ -94,8 +94,8 @@ const weeklyPlot = (babyName, daysBack) => {
   })
 }
 
-  const updatePlot = (babyName, data, date) => {
-    dataPrep.updateData(babyName, data, date)
+  const updatePlot = (babyName, date, data) => {
+    dataPrep.updateData(babyName, date, data)
     // weeklyPlot(babyName, 7)
     dayPlot(babyName, date)
   }
