@@ -81,15 +81,9 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
   if (dayBehavior) {
     dayBehavior.foodIntake.push(foodIntake)
   } else {
-    dayBehavior = { date, 'foodIntake': [ foodIntake ], mood, notes  }
-    // dayBehavior['date'] = date
-    // dayBehavior['foodIntake'] = [ data.foodIntake ]
-    // dayBehavior['overAllMood'] = data.mood
-    // dailyBehavior['notes'] =  data.notes
+    dayBehavior = { date, 'foodIntake': [ foodIntake ], mood, notes  }  
     dailyBehavior.push(dayBehavior)
   }
-
-  console.log(dailyBehavior)
 }
 
 module.exports = {

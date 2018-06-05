@@ -68,6 +68,14 @@ const weeklyPlot = (babyName, daysBack) => {
     solidFoods 
   } = dataPrep.prepareLastXDaysData(babyName, daysBack)
 
+  const ul = document.querySelector('ul')
+  ul.innerHTML = ''
+  solidFoods.forEach(food => {
+    const li = document.createElement('li')
+    li.textContent = food
+    ul.appendChild(li)
+  })
+
   if (error) return 'BABY NOT FOUND!'
   Highcharts.chart('charts-container', {
     chart: {

@@ -41,7 +41,7 @@ form.addEventListener('submit', (event) => {
   const mood = event.target.mood.value
   const formulaQty = +event.target['qty-consumed'].value
   const solidFoods = event.target['solids-consumed'].value.split(',')
-  const notes = event.target.notes.textContent
+  const notes = event.target.notes.value
   const dataObj = { 
     foodIntake: {
       time, 
