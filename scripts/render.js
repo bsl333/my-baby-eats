@@ -32,7 +32,7 @@ const myChart = () => {
 
 const dayPlot = (babyName, date) => {
   const { xAxis, yAxis, title, error } = dataPrep.prepareDailyData(babyName, date)
-  console.log(title)
+  console.log(xAxis)
   if (error) return 'BABY NOT FOUND!'
   Highcharts.chart('charts-container', {
     chart: {

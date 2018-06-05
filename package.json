@@ -19,6 +19,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "convert-time": "^0.3.0",
     "dateformat": "^3.0.3",
     "highcharts": "^6.1.0"
   }

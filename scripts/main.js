@@ -1,5 +1,6 @@
 const render = require('./render')
 const dateFormat = require('dateformat')
+const convertTime = require('convert-time')
 const babyName = 'Grayson'
 
 // render.myChart()
@@ -18,6 +19,10 @@ console.log(render.dayPlot('Grayson', '5-27-2018'))
 const buttons = Array.from(document.querySelectorAll('.btn-outline-primary'))
 const form = document.getElementById('user-input')
 const radioBtns = Array.from(document.querySelectorAll('.radio-group'))
+const now = new Date()
+const timeFormatted = dateFormat(now, 'HH:MM')
+const time = document.querySelector('#time')
+time.value = timeFormatted
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -34,10 +39,10 @@ buttons.forEach(btn => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
-  const now = new Date()
   const date = dateFormat(now, 'm-d-yyyy')
-  const time = dateFormat(now, 'h:MM TT')
-  
+  let time = convertTime(event.target.time.value).toUpperCase()
+  console.log('time', time)
+   
   const mood = event.target.mood.value
   const formulaQty = +event.target['qty-consumed'].value
   const solidFoods = event.target['solids-consumed'].value.split(',')

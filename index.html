@@ -50,33 +50,37 @@
         </div>
 
         <div class="col-2" id="solid-food-section" class="text-center">
-          <h4 class="title-text">Additional Info/Solid Foods</h4>
+          <h4 class="title-text">Additional Info</h4>
           <ul id="solid-food-list">
 
           </ul>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-7">
           <form id="user-input">
             <fieldset>
               <div class="form-row">
                 <legend class="text-center title-text">Input child's behaviour information</legend>
-                <div class="col-6 form-group">
-                  <div class=>
+                <div class="col-2 form-group">
+                  <label for="time">Time</label>
+                  <input type="time" name="time" id="time" class="form-control" required>
+                </div>
+                <div class="col-5 form-group">
+                  <div>
                     <label for="qty-consumed">Formula Consumed</label>
                     <input type="number" name="qty-consumed" id="qty-consumed" required min="0" class="form-control">
                     <!-- <br> -->
                   </div>
                 </div>
-                <div class="col-6 form-group">
+                <div class="col-5 form-group">
                   <label for="solids-consumed">Solid Food Consumed</label>
                   <input type="text" name="solids-consumed" id="solids-consumed" class="form-control">
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-6 mx-auto">
-                    <label>Overall mood for the day</label>
+                  <label>Overall mood for the day</label>
                   <div id="radio-buttons">
                     <div class="radio-group">
                       <label for="happy">
@@ -84,15 +88,15 @@
                       </label>
                       <input type="radio" name="mood" id="happy" value="happy">
                     </div>
-  
+
                     <div class="radio-group mx-4">
                       <label for="meh">
                         <i class="class far fa-meh fa-3x"></i>
                       </label>
                       <input type="radio" name="mood" id="meh" value="meh">
                     </div>
-  
-                    <div class="radio-group">
+
+                    <div class="radio-group mr-4">
                       <label for="fussy">
                         <i class="far fa-frown fa-3x"></i>
                       </label>

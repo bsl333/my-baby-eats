@@ -1,12 +1,26 @@
 const data = require('./data')
+const convertTime = require('convert-time')
 
 function prepareDailyData(babyName, date) {
-  const dailyBehavior = getDailyBehavior(babyName)
-  if (!dailyBehavior) return { error: 'ERROR' }
-  const foodIntake = getFoodIntakeOnDate(babyName, date)
   const xAxis = []
   const yAxis = []
   const title = `${date} Formula Consumption for ${babyName}`
+
+  const dailyBehavior = getDailyBehavior(babyName)
+  if (!dailyBehavior) return { error: 'ERROR' }
+  const foodIntake = getFoodIntakeOnDate(babyName, date)
+  if (!foodIntake){
+    return { xAxis, yAxis, title, qtyConsumed: 0 , error: 'ERROR no Food Intake for today' }
+  }
+
+  
+  foodIntake.sort((a, b) => {
+    const x = convertTime(a.time.toUpperCase())
+    const y = convertTime(b.time.toUpperCase())
+    if (x < y) return -1
+    if (x > y) return 1
+    return 0
+  })
   foodIntake.forEach(foodObj => {
     xAxis.push(foodObj.time)
     yAxis.push(foodObj.formulaQty)
@@ -60,7 +74,7 @@ function prepareLastXDaysData (babyName, daysBack) {
   })
   const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
 
-  return { xAxis, yAxis, title, solidFoods}
+  return { xAxis, yAxis, title, solidFoods } 
 
 }
 
@@ -80,6 +94,7 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
   let dayBehavior = dailyBehavior.find(val => val.date === date)
   if (dayBehavior) {
     dayBehavior.foodIntake.push(foodIntake)
+    dayBehavior.notes += `\n${notes}`
   } else {
     dayBehavior = { date, 'foodIntake': [ foodIntake ], mood, notes  }  
     dailyBehavior.push(dayBehavior)
@@ -88,7 +103,6 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
 
 module.exports = {
   prepareDailyData,
-  // prepareWeeklyData,
   prepareLastXDaysData,
   updateData
 }
