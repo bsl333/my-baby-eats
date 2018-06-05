@@ -57,6 +57,21 @@ form.addEventListener('submit', (event) => {
     notes
   }
   render.updatePlot(babyName, date, dataObj)
+
+  // simulate a click event to not have to rewrite my click event
+  var simulateClick = function (elem) {
+    // Create our event (with options)
+    var evt = new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+      view: window
+    });
+    // If cancelled, don't dispatch our event
+    var canceled = !elem.dispatchEvent(evt);
+  };
+  const oneDay = document.querySelector('#one-day')
+  simulateClick(oneDay)
+  
   
 })
 
