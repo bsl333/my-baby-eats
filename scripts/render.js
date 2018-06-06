@@ -21,6 +21,7 @@ const dayPlot = (babyName, date) => {
     chartsContainer.innerHTML = ''
     chartsContainer.appendChild(h2)
     chartsContainer.className = 'text-center'
+    updateAdditionalInfo()
     return
   }
   updateAdditionalInfo(solidFoods, qtyConsumed)
@@ -100,6 +101,7 @@ const weeklyPlot = (babyName, daysBack) => {
     const p = document.getElementById('qty-consumed-avg')
     ul.innerHTML = ''
     h6.textContent = ''
+    p.textContent = ''
     if (solidFoods) {
       h6.textContent = 'Solid Foods Eaten'
       solidFoods.forEach(food => {
@@ -107,8 +109,8 @@ const weeklyPlot = (babyName, daysBack) => {
         li.textContent = food
         ul.appendChild(li)
       })
+      p.textContent = `${isAvg ? 'Avg consumed: ': 'Quantity consumed today:'} ${qtyConsumed.toFixed(2)} Oz`
     }
-    p.textContent = `${isAvg ? 'Avg consumed: ': 'Quantity consumed today:'} ${qtyConsumed.toFixed(2)} Oz`
 
   }
 
