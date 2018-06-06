@@ -113,7 +113,12 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
     dayBehavior.foodIntake.push(foodIntake)
     dayBehavior.notes += `\n${notes}`
   } else {
-    dayBehavior = { date, 'foodIntake': [ foodIntake ], mood, notes  }  
+    dayBehavior = { 
+      date,
+      'foodIntake': Array.isArray(foodIntake) ? foodIntake : [ foodIntake ],
+      mood,
+      notes  
+    }  
     dailyBehavior.push(dayBehavior)
   }
 }

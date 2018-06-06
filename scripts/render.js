@@ -91,7 +91,7 @@ const weeklyPlot = (babyName, daysBack) => {
 
   const updatePlot = (babyName, date, data) => {
     dataPrep.updateData(babyName, date, data)
-    // weeklyPlot(babyName, 7)
+    // setLocalStorage(data)
     dayPlot(babyName, date)
   }
 
@@ -111,15 +111,67 @@ const weeklyPlot = (babyName, daysBack) => {
       })
       p.textContent = `${isAvg ? 'Avg consumed: ': 'Quantity consumed today:'} ${qtyConsumed.toFixed(2)} Oz`
     }
-
   }
 
+  function setLocalStorage(date, babyObj) {
+    const dataArrName = 'dataArr'
+    const dailyBehaviorInLocalStorage = getLocalStorage(dataArrName)
 
+    if (!dailyBehaviorInLocalStorage) {
+      const dayBehavior = {
+        date,
+        'foodIntake': [ babyObj.foodIntake ],
+        mood: babyObj.mood,
+        notes: babyObj.notes
+      }
+      localStorage.setItem(dataArrName, JSON.stringify([ dayBehavior ]))
+    } else {
+      const newLocalStorageData = JSON.parse(dailyBehaviorInLocalStorage)
+      let dayBehavior = newLocalStorageData.find(val => val.date === date)
+      if(dayBehavior) {
+        dayBehavior.foodIntake.push(babyObj.foodIntake)
+        dayBehavior.notes += `\n${notes}`
+      } else {
+        dayBehavior = { 
+          date,
+          'foodIntake': [ babyObj.foodIntake ],
+          mood,
+          notes  
+        }
+        newLocalStorageData.push(dayBehavior)
+      }
+      console.log(newLocalStorageData)
+      localStorage.setItem(dataArrName, JSON.stringify(newLocalStorageData))
+    }
+  }
+
+  function getLocalStorage(dataArrName) {
+    return localStorage.getItem(dataArrName)
+  }
+
+  function initiatePlotFromLocalStorage(babyName) {
+    const dataArrName = 'dataArr'
+    const dailyBehaviorInLocalStorage = getLocalStorage(dataArrName)
+    
+    if (dailyBehaviorInLocalStorage) {
+      JSON.parse(dailyBehaviorInLocalStorage).forEach(val => {
+        console.log(val.foodIntake)
+        const dayBehavior = {
+          'foodIntake': val.foodIntake,
+          mood: val.mood,
+          notes: val.notes
+        }
+        updatePlot(babyName, val.date, dayBehavior)
+      })
+    }
+  }
 
 
 
 module.exports = {
   dayPlot,
   weeklyPlot,
-  updatePlot
+  updatePlot,
+  setLocalStorage,
+  initiatePlotFromLocalStorage
 }

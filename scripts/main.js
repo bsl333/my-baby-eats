@@ -12,8 +12,9 @@ const now = new Date()
 const dateFormatted = dateFormat(now, 'm-d-yyyy')
 const timeFormatted = dateFormat(now, 'HH:MM')
 document.querySelector('#time').value = timeFormatted
-render.dayPlot(babyName, dateFormatted)
 
+// render.dayPlot(babyName, dateFormatted)
+render.initiatePlotFromLocalStorage(babyName)
 
 
 buttons.forEach(btn => {
@@ -39,7 +40,7 @@ form.addEventListener('submit', (event) => {
   const formulaQty = +event.target['qty-consumed'].value
   const solidFoods = event.target['solids-consumed'].value.split(',')
   const notes = event.target.notes.value
-  const dataObj = { 
+  const babyBehaviorObj = {
     foodIntake: {
       time, 
       formulaQty,
@@ -48,7 +49,8 @@ form.addEventListener('submit', (event) => {
     mood,
     notes
   }
-  render.updatePlot(babyName, date, dataObj)
+  render.setLocalStorage(date, babyBehaviorObj)
+  render.updatePlot(babyName, date, babyBehaviorObj)
 
   // simulate a click event to not have to rewrite my click event
   var simulateClick = function (elem) {
