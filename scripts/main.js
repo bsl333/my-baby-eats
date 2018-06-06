@@ -47,8 +47,8 @@ form.addEventListener('submit', (event) => {
       time, 
       formulaQty,
       solidFoods,
+      mood
     },
-    mood,
     notes
   }
   render.setLocalStorage(date, babyBehaviorObj)
@@ -80,6 +80,7 @@ radioBtns.forEach(btn => {
 
 moodBtn.addEventListener('click', (event) => {
   // call render function to call mood plot be generated
+  moodBtn.classList.add('active')
   render.moodPlot(babyName, daysBack)
 })
 

@@ -151,7 +151,6 @@ function setLocalStorage(date, babyObj) {
       dayBehavior = {
         date,
         'foodIntake': [babyObj.foodIntake],
-        mood: babyObj.mood,
         notes: babyObj.notes
       }
       newLocalStorageData.push(dayBehavior)
