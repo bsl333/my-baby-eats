@@ -8,30 +8,35 @@ const data = [
           {
             time: '7:00 AM',
             formulaQty: 2.5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Chicken']
+            solidFoods: ['Chicken'],
+            mood: 'neutral'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['Chicken']
+            solidFoods: ['Chicken'],
+            mood: 'happy'
           },
           {
             time: '9:00 PM',
             formulaQty: 4,
-            solidFoods: ['Chicken']
+            solidFoods: ['Chicken'],
+            mood: 'happy'
           },
         ],
-        overAllMood: 'Happy',
+        overAllMood: 'happy',
         notes: 'He was happy all day and slept well'
       },
       {
@@ -40,32 +45,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 2.5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'fussy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '9:00 PM',
             formulaQty: 4,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 PM',
             formulaQty: 4,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
         ],
         overAllMood: 'Fussy',
@@ -78,32 +89,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 2.5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '11:45 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'happy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '9:00 PM',
             formulaQty: 4,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 PM',
             formulaQty: 4,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
         ],
         overAllMood: 'Fussy',
@@ -116,32 +133,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '11:45 AM',
             formulaQty: 1,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'neutral'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
         ],
         overAllMood: 'Fussy',
@@ -154,32 +177,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '11:45 AM',
             formulaQty: 1,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'fussy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
         ],
         overAllMood: 'Fussy',
@@ -192,32 +221,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 AM',
             formulaQty: 6,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['Chicken']
+            solidFoods: ['Chicken'],
+            mood: 'fussy'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
         ],
         overAllMood: 'Fussy',
@@ -230,32 +265,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 AM',
             formulaQty: 1,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Sweet Potato']
+            solidFoods: ['Sweet Potato'],
+            mood: 'neutral'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
         ],
         overAllMood: 'Fussy',
@@ -268,32 +309,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '11:45 AM',
             formulaQty: 1,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'fussy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
         ],
         overAllMood: 'Fussy',
@@ -306,32 +353,38 @@ const data = [
           {
             time: '9:00 AM',
             formulaQty: 3,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '11:45 AM',
             formulaQty: 1,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'happy'
           },
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs']
+            solidFoods: ['Eggs'],
+            mood: 'happy'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'neutral'
           },
           {
             time: '9:00 PM',
             formulaQty: 2,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
           {
             time: '11:45 PM',
             formulaQty: 8,
-            solidFoods: ['']
+            solidFoods: [''],
+            mood: 'fussy'
           },
         ],
         overAllMood: 'Happy',

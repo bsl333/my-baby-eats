@@ -8,6 +8,7 @@ const babyName = 'Grayson'
 const buttons = Array.from(document.querySelectorAll('.btn-outline-primary'))
 const form = document.getElementById('user-input')
 const radioBtns = Array.from(document.querySelectorAll('.radio-group'))
+const moodBtn = document.getElementById('mood-plot')
 const now = new Date()
 const dateFormatted = dateFormat(now, 'm-d-yyyy')
 const timeFormatted = dateFormat(now, 'HH:MM')
@@ -76,6 +77,10 @@ radioBtns.forEach(btn => {
   })
 })
 
+moodBtn.addEventListener('click', (event) => {
+  // call render function to call mood plot be generated
+  render.moodPlot(babyName, 7)
+})
 
 
 

@@ -72,7 +72,7 @@ const weeklyPlot = (babyName, daysBack) => {
     yAxis: {
       min: 0,
       title: {
-        text: 'Formula Consumed (Oz)'
+        text: 'Avg Formula Consumed (Oz)'
       },
     },
     series: [
@@ -88,6 +88,12 @@ const updatePlot = (babyName, date, data) => {
   dataPrep.updateData(babyName, date, data)
   // setLocalStorage(data)
   dayPlot(babyName, date)
+}
+
+const moodPlot = (babyName, daysBack) => {
+  const {
+
+  } =  dataPrep.prepareMoodData(babyName, daysBack)
 }
 
 function setLocalStorage(date, babyObj) {
@@ -177,6 +183,7 @@ module.exports = {
   dayPlot,
   weeklyPlot,
   updatePlot,
+  moodPlot,
   setLocalStorage,
   initiatePlotFromLocalStorage
 }

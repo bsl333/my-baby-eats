@@ -57,13 +57,13 @@ function prepareDailyData(babyName, date) {
 function prepareLastXDaysData (babyName, daysBack) {
   const dailyBehavior = getDailyBehavior(babyName)
   if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
-  const weeklyBehavior = dailyBehavior.slice(-1 * daysBack)
+  const behaviors = dailyBehavior.slice(-1 * daysBack)
 
   const xAxis = []
   const yAxis = []
   let solidFoods = []
 
-  weeklyBehavior.forEach(day => {
+  behaviors.forEach(day => {
     xAxis.push(day.date)
     const formulaConsumed = day.foodIntake
       .map(val => val.formulaQty)
@@ -82,6 +82,33 @@ function prepareLastXDaysData (babyName, daysBack) {
   const avgQtyConsumed = yAxis.reduce((accum, val) => accum + val) / yAxis.length
   return { xAxis, yAxis, title, solidFoods, avgQtyConsumed } 
 
+}
+
+function prepareMoodData(babyName, daysBack) {
+  const dailyBehavior = getDailyBehavior(babyName)
+  if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
+  const behaviors = dailyBehavior.slice(-1 * daysBack)
+  const moodFreqObj = { }
+  behaviors.forEach(day => {
+    const moods = day.foodIntake.map(val => val.mood)
+    moods.forEach(mood => {
+      if (mood) {
+        moodFreqObj[mood] = moodFreqObj[mood] ? ++moodFreqObj[mood] : 1 
+      }
+    })
+  })
+
+  const xAxis = []
+  const yAxis = []
+
+  for (let key in moodFreqObj) {
+    xAxis.push(key)
+    yAxis.push(moodFreqObj[key])
+  }
+  const title = `${babyName}'s mood behavior from the last ${daysBack}`
+  console.log(moodFreqObj)
+
+  return { xAxis, yAxis, title}
 }
 
 function getDailyBehavior(name) {
@@ -115,6 +142,7 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
 module.exports = {
   prepareDailyData,
   prepareLastXDaysData,
-  updateData
+  updateData,
+  prepareMoodData
 }
 
