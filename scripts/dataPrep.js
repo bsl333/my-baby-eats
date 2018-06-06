@@ -108,7 +108,7 @@ function prepareMoodData(babyName, daysBack) {
   const title = `${babyName}'s mood behavior from the last ${daysBack}`
   console.log(moodFreqObj)
 
-  return { xAxis, yAxis, title}
+  return { xAxis, yAxis, title }
 }
 
 function getDailyBehavior(name) {

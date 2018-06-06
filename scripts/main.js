@@ -12,6 +12,7 @@ const moodBtn = document.getElementById('mood-plot')
 const now = new Date()
 const dateFormatted = dateFormat(now, 'm-d-yyyy')
 const timeFormatted = dateFormat(now, 'HH:MM')
+let daysBack = 1
 document.querySelector('#time').value = timeFormatted
 
 // render.dayPlot(babyName, dateFormatted)
@@ -20,7 +21,7 @@ render.initiatePlotFromLocalStorage(babyName)
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const daysBack = +btn.textContent.trim().split(' ')[0]
+    daysBack = +btn.textContent.trim().split(' ')[0]
     const date = dateFormat(new Date(), 'm-d-yyyy')
     daysBack > 1 ? render.weeklyPlot(babyName, daysBack) :
       render.dayPlot(babyName, date)
@@ -79,7 +80,7 @@ radioBtns.forEach(btn => {
 
 moodBtn.addEventListener('click', (event) => {
   // call render function to call mood plot be generated
-  render.moodPlot(babyName, 7)
+  render.moodPlot(babyName, daysBack)
 })
 
 

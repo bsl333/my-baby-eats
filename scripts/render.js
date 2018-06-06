@@ -92,8 +92,42 @@ const updatePlot = (babyName, date, data) => {
 
 const moodPlot = (babyName, daysBack) => {
   const {
-
-  } =  dataPrep.prepareMoodData(babyName, daysBack)
+    xAxis,
+    yAxis,
+    title,
+    error
+  } = dataPrep.prepareMoodData(babyName, daysBack)
+  if (error) {
+    setDefaultChartContainer()
+  }
+  Highcharts.chart('charts-container', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: title
+    },
+    xAxis: {
+      categories: xAxis
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Frequency'
+      },
+    },
+    plotOptions: {
+      series: {
+        colorByPoint: true
+      }
+    },
+    series: [
+      {
+        name: babyName,
+        data: yAxis
+      }
+    ]
+  })
 }
 
 function setLocalStorage(date, babyObj) {
@@ -117,7 +151,7 @@ function setLocalStorage(date, babyObj) {
     } else {
       dayBehavior = {
         date,
-        'foodIntake': [ babyObj.foodIntake ],
+        'foodIntake': [babyObj.foodIntake],
         mood: babyObj.mood,
         notes: babyObj.notes
       }
