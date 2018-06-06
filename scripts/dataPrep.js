@@ -89,7 +89,7 @@ function prepareLastXDaysData (babyName, daysBack) {
         food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
     })
   })
-  const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
+  const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)[0]} Formula Consumption for ${babyName}`
   const avgQtyConsumed = yAxis.reduce((accum, val) => accum + val) / yAxis.length
   return { xAxis, yAxis, title, solidFoods, avgQtyConsumed } 
 
