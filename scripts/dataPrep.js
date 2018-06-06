@@ -4,16 +4,16 @@ const convertTime = require('convert-time')
 function prepareDailyData(babyName, date) {
   const xAxis = []
   const yAxis = []
+  let solidFoods = []
   const title = `${date} Formula Consumption for ${babyName}`
-
   const dailyBehavior = getDailyBehavior(babyName)
+
   if (!dailyBehavior) return { error: 'ERROR' }
   const foodIntake = getFoodIntakeOnDate(babyName, date)
   if (!foodIntake){
     return { xAxis, yAxis, title, qtyConsumed: 0 , error: 'ERROR no Food Intake for today' }
   }
-
-  
+  // Sort array to acct for user input
   foodIntake.sort((a, b) => {
     const x = convertTime(a.time.toUpperCase())
     const y = convertTime(b.time.toUpperCase())
@@ -21,12 +21,28 @@ function prepareDailyData(babyName, date) {
     if (x > y) return 1
     return 0
   })
+
   foodIntake.forEach(foodObj => {
     xAxis.push(foodObj.time)
     yAxis.push(foodObj.formulaQty)
+    foodObj.solidFoods.map(val => {
+      val ? (solidFoods.indexOf(val) === -1 ? solidFoods.push(val) : null): null
+    })
   })
+  console.log('solidFoods: ', solidFoods)
+
+
+  // const solidFoodsArr = day.foodIntake
+  //     .map(val => val.solidFoods)
+
+  //   // find unique solid foods and push onto solid food array
+  //   solidFoodsArr.forEach(val => {
+  //     val.forEach(food => 
+  //       food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
+  //   })
+  
   const qtyConsumed = yAxis.reduce((accum, val) => accum + val)
-  const highchartsPlotObj = { xAxis, yAxis, title, qtyConsumed }
+  const highchartsPlotObj = { xAxis, yAxis, title, solidFoods, qtyConsumed }
   return highchartsPlotObj
 }
 
@@ -66,6 +82,7 @@ function prepareLastXDaysData (babyName, daysBack) {
     yAxis.push(formulaConsumed)
     const solidFoodsArr = day.foodIntake
       .map(val => val.solidFoods)
+
     // find unique solid foods and push onto solid food array
     solidFoodsArr.forEach(val => {
       val.forEach(food => 
@@ -73,8 +90,8 @@ function prepareLastXDaysData (babyName, daysBack) {
     })
   })
   const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)} Formula Consumption for ${babyName}`
-
-  return { xAxis, yAxis, title, solidFoods } 
+  const avgQtyConsumed = yAxis.reduce((accum, val) => accum + val) / yAxis.length
+  return { xAxis, yAxis, title, solidFoods, avgQtyConsumed } 
 
 }
 

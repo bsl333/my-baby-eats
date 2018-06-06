@@ -3,26 +3,18 @@ const dateFormat = require('dateformat')
 const convertTime = require('convert-time')
 const babyName = 'Grayson'
 
-// render.myChart()
-console.log(render.dayPlot('Grayson', '5-27-2018'))
-// console.log(render.weeklyPlot(babyName, 7))
-
-// const now = new Date()
-// console.log(now)
-// const date = dateFormat(now, "mm dd yyyy HH:MM")
-// const day = dateFormat(now, "m-d-yyyy")
-// const time = dateFormat(now, "HH:MM TT")
-// console.log('day ', day)
-// console.log('time ', time)
-// console.log(date)
+// console.log(render.dayPlot('Grayson', '5-27-2018'))
 
 const buttons = Array.from(document.querySelectorAll('.btn-outline-primary'))
 const form = document.getElementById('user-input')
 const radioBtns = Array.from(document.querySelectorAll('.radio-group'))
 const now = new Date()
+const dateFormatted = dateFormat(now, 'm-d-yyyy')
 const timeFormatted = dateFormat(now, 'HH:MM')
-const time = document.querySelector('#time')
-time.value = timeFormatted
+document.querySelector('#time').value = timeFormatted
+render.dayPlot(babyName, dateFormatted)
+
+
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {

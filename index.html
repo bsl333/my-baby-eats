@@ -16,8 +16,11 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="header-text text-center mt-4">My Baby Eats</h1>
+  <header class="d-flex justify-content-between">
+    <div></div>
+    <h1 class="header-text mt-2 ml-0">My Baby Eats</h1>
+    <div></div>
+    <!-- <img src="assets/IMG_0068.HEIC" alt="" class="align-self-center mr-4 rounded-circle" style="height: 60px; width: 51px"> -->
   </header>
   <hr>
   <main>
@@ -45,15 +48,15 @@
             90 days
           </button>
         </div>
-        <div class="col-8">
-          <div id="charts-container" style="width:100%; height: 335px;"></div>
+        <div class="col-7">
+          <div id="charts-container" style="width:100%; height: 325px;"></div>
         </div>
 
-        <div class="col-2" id="solid-food-section" class="text-center">
+        <div class="col-3" id="solid-food-section" class="text-center">
           <h4 class="title-text">Additional Info</h4>
-          <ul id="solid-food-list">
-
-          </ul>
+          <h6 class="subtitle-text" id="solid-food-title"></h6>
+          <ul id="solid-food-list"></ul>
+          <p id="qty-consumed-avg"></p>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -62,24 +65,24 @@
             <fieldset>
               <div class="form-row">
                 <legend class="text-center title-text">Input child's behaviour information</legend>
-                <div class="col-2 form-group">
+                <div class="col-3 form-group">
                   <label for="time">Time</label>
                   <input type="time" name="time" id="time" class="form-control" required>
                 </div>
-                <div class="col-5 form-group">
+                <div class="col-4 form-group">
                   <div>
-                    <label for="qty-consumed">Formula Consumed</label>
+                    <label for="qty-consumed">Formula Consumed (Ounces)</label>
                     <input type="number" name="qty-consumed" id="qty-consumed" class="form-control" required min="0" step="0.5">
                     <!-- <br> -->
                   </div>
                 </div>
-                <div class="col-5 form-group">
+                <div class="col-4 form-group">
                   <label for="solids-consumed">Solid Food Consumed</label>
                   <input type="text" name="solids-consumed" id="solids-consumed" class="form-control">
                 </div>
               </div>
               <div class="form-row">
-                <div class="col-6 mx-auto">
+                <div class="col-4">
                   <label>Overall mood for the day</label>
                   <div id="radio-buttons">
                     <div class="radio-group">
@@ -104,7 +107,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-6">
+                <div class="col-7">
                   <div class="form-group">
                     <label for="notes">Additional Notes:</label>
                     <textarea name="" id="notes" cols="3" rows="2" class="form-control"></textarea>

@@ -11,7 +11,7 @@ body {
 .header-text {
   font-family: Lobster, cursive;
   color: lightskyblue;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .sticky-footer {
@@ -37,4 +37,10 @@ body {
 .title-text {
   font-family: Lobster;
   color: skyblue;
+}
+
+.subtitle-text {
+  font-family: Lobster;
+  color: pink;
+  text-decoration: underline; 
 }
