@@ -29,17 +29,6 @@ function prepareDailyData(babyName, date) {
       val ? (solidFoods.indexOf(val) === -1 ? solidFoods.push(val) : null): null
     })
   })
-  console.log('solidFoods: ', solidFoods)
-
-
-  // const solidFoodsArr = day.foodIntake
-  //     .map(val => val.solidFoods)
-
-  //   // find unique solid foods and push onto solid food array
-  //   solidFoodsArr.forEach(val => {
-  //     val.forEach(food => 
-  //       food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
-  //   })
   
   const qtyConsumed = yAxis.reduce((accum, val) => accum + val)
   const highchartsPlotObj = { xAxis, yAxis, title, solidFoods, qtyConsumed }

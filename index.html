@@ -16,13 +16,13 @@
 </head>
 
 <body>
-  <header class="d-flex justify-content-between">
-    <div></div>
+  <header class="d-flex justify-content-center">
+    <!-- <div></div> -->
     <h1 class="header-text mt-2 ml-0">My Baby Eats</h1>
-    <div></div>
+    <!-- <div></div> -->
     <!-- <img src="assets/IMG_0068.HEIC" alt="" class="align-self-center mr-4 rounded-circle" style="height: 60px; width: 51px"> -->
   </header>
-  <hr>
+  <hr class="mt-0">
   <main>
     <div class="container-fluid">
       <div class="row">
@@ -49,7 +49,7 @@
           </button>
         </div>
         <div class="col-7">
-          <div id="charts-container" style="width:100%; height: 325px;"></div>
+          <div id="charts-container" style="width:100%; height: 350px;"></div>
         </div>
 
         <div class="col-3" id="solid-food-section" class="text-center">
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="form-row">
-                <div class="col-4">
+                <div class="col-3">
                   <label>Overall mood for the day</label>
                   <div id="radio-buttons">
                     <div class="radio-group">
@@ -92,14 +92,14 @@
                       <input type="radio" name="mood" id="happy" value="happy">
                     </div>
 
-                    <div class="radio-group mx-4">
+                    <div class="radio-group mx-3">
                       <label for="meh">
                         <i class="class far fa-meh fa-3x"></i>
                       </label>
                       <input type="radio" name="mood" id="meh" value="meh">
                     </div>
 
-                    <div class="radio-group mr-4">
+                    <div class="radio-group mr">
                       <label for="fussy">
                         <i class="far fa-frown fa-3x"></i>
                       </label>
@@ -107,7 +107,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <div class="form-group">
                     <label for="notes">Additional Notes:</label>
                     <textarea name="" id="notes" cols="3" rows="2" class="form-control"></textarea>

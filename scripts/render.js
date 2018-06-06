@@ -111,13 +111,12 @@ function setLocalStorage(date, babyObj) {
     } else {
       dayBehavior = {
         date,
-        'foodIntake': [babyObj.foodIntake],
-        mood,
-        notes
+        'foodIntake': [ babyObj.foodIntake ],
+        mood: babyObj.mood,
+        notes: babyObj.notes
       }
       newLocalStorageData.push(dayBehavior)
     }
-    console.log(newLocalStorageData)
     localStorage.setItem(dataArrName, JSON.stringify(newLocalStorageData))
   }
 }
@@ -158,7 +157,8 @@ function updateAdditionalInfo(solidFoods, qtyConsumed, isAvg = false) {
       li.textContent = food
       ul.appendChild(li)
     })
-    p.textContent = `${isAvg ? 'Avg consumed: ' : 'Quantity consumed today:'} ${qtyConsumed.toFixed(2)} Oz`
+    pText = isAvg ? `Avg forumla consumed` : 'Quantity of formula consumed'
+    p.textContent = `${pText} ${qtyConsumed.toFixed(2)} Oz`
   }
 }
 

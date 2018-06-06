@@ -19,7 +19,7 @@ body {
   bottom: 0;
   height: 30px;
   width: 100%;
-  line-height: 30px;
+  line-height: 1;
 }
 
 .fa-heart {
