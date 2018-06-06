@@ -55,7 +55,6 @@ const weeklyPlot = (babyName, daysBack) => {
     solidFoods,
     avgQtyConsumed
   } = dataPrep.prepareLastXDaysData(babyName, daysBack)
-
   updateAdditionalInfo(solidFoods, avgQtyConsumed, true)
 
   if (error) return 'BABY NOT FOUND!'
@@ -113,7 +112,7 @@ const moodPlot = (babyName, daysBack) => {
     yAxis: {
       min: 0,
       title: {
-        text: 'Frequency'
+        text: 'Percent of Occurences'
       },
     },
     plotOptions: {

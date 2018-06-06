@@ -100,12 +100,16 @@ function prepareMoodData(babyName, daysBack) {
 
   const xAxis = []
   const yAxis = []
+  const moodsLogged = Object.values(moodFreqObj).length ? Object.values(moodFreqObj).reduce((accum, val) => accum + val) : null
+  console.log(moodsLogged)
 
   for (let key in moodFreqObj) {
     xAxis.push(key)
-    yAxis.push(moodFreqObj[key])
+    const percentOfOccurence = ((moodFreqObj[key] / moodsLogged) * 100).toFixed(3)
+    yAxis.push(+percentOfOccurence)
   }
-  const title = `${babyName}'s mood behavior from the last ${daysBack}`
+
+  const title = `${babyName}'s mood behavior from the last ${daysBack > 1 ? daysBack + ' days' : daysBack + ' day'}`
   console.log(moodFreqObj)
 
   return { xAxis, yAxis, title }

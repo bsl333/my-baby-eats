@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify scripts/main.js -o bundle.js",
-    "watch": "watchify scripts/main.js -o bundle.js",
-    "dev-server": "live-server .",
-    "dev": "run-all \"npm run watch\" \"npm run dev-server\""
+    "build": "browserify scripts/main.js -o dist/bundle.js",
+    "watch": "watchify scripts/main.js -o dist/bundle.js",
+    "dev-server": "live-server",
+    "dev": "run-all \"npm run watch\" \"npm run dev-server\"",
+    "uglify": "uglifyjs dist/bundle.js --mangle --compress -o dist/bundle.min.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "browserify": "^16.2.2",
     "live-server": "^1.2.0",
     "run-all": "^1.0.1",
+    "uglify-es": "^3.3.9",
     "watchify": "^3.11.0"
   },
   "dependencies": {

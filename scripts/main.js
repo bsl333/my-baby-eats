@@ -46,7 +46,7 @@ form.addEventListener('submit', (event) => {
     foodIntake: {
       time, 
       formulaQty,
-      solidFoods
+      solidFoods,
     },
     mood,
     notes
