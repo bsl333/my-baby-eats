@@ -81,7 +81,7 @@ radioBtns.forEach(btn => {
 moodBtn.addEventListener('click', (event) => {
   // call render function to call mood plot be generated
   moodBtn.classList.add('active')
-  render.moodPlot(babyName, daysBack)
+  render.moodPlot(babyName, daysBack, dateFormatted)
 })
 
 

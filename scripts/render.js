@@ -57,6 +57,9 @@ const weeklyPlot = (babyName, daysBack) => {
   } = dataPrep.prepareLastXDaysData(babyName, daysBack)
   updateAdditionalInfo(solidFoods, avgQtyConsumed, true)
 
+  console.log('x-axis: ', xAxis)
+  console.log('y-axis: ', yAxis)
+
   if (error) return 'BABY NOT FOUND!'
   Highcharts.chart('charts-container', {
     chart: {
@@ -89,14 +92,15 @@ const updatePlot = (babyName, date, data) => {
   dayPlot(babyName, date)
 }
 
-const moodPlot = (babyName, daysBack) => {
+const moodPlot = (babyName, daysBack, todaysDate) => {
   const {
     xAxis,
     yAxis,
     title,
     error
-  } = dataPrep.prepareMoodData(babyName, daysBack)
+  } = dataPrep.prepareMoodData(babyName, daysBack, todaysDate)
   if (error) {
+    console.log(error)
     setDefaultChartContainer()
   }
   Highcharts.chart('charts-container', {
@@ -127,6 +131,11 @@ const moodPlot = (babyName, daysBack) => {
       }
     ]
   })
+}
+
+function polarFeedingPlot(babyName, daysBack) {
+  dataPrep.preparePolarFeedingData(babyName, daysBack)
+
 }
 
 function setLocalStorage(date, babyObj) {
@@ -201,6 +210,7 @@ function updateAdditionalInfo(solidFoods, qtyConsumed, isAvg = false) {
 }
 
 function setDefaultChartContainer() {
+  console.log('called')
   const h2 = document.createElement('h2')
   h2.textContent = `Please enter data below to render today's plot`
   const chartsContainer = document.getElementById('charts-container')
@@ -216,6 +226,7 @@ module.exports = {
   weeklyPlot,
   updatePlot,
   moodPlot,
+  polarFeedingPlot,
   setLocalStorage,
   initiatePlotFromLocalStorage
 }

@@ -84,10 +84,13 @@ function prepareLastXDaysData (babyName, daysBack) {
 
 }
 
-function prepareMoodData(babyName, daysBack) {
+function prepareMoodData(babyName, daysBack, todaysDate) {
   const dailyBehavior = getDailyBehavior(babyName)
   if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
   const behaviors = dailyBehavior.slice(-1 * daysBack)
+  if (daysBack === 1 && behaviors[0].date !== todaysDate) {
+    return { error: 'no mood data is available' }
+  }
   const moodFreqObj = { }
   behaviors.forEach(day => {
     const moods = day.foodIntake.map(val => val.mood)
@@ -113,6 +116,11 @@ function prepareMoodData(babyName, daysBack) {
   console.log(moodFreqObj)
 
   return { xAxis, yAxis, title }
+}
+
+function preparePolarFeedingData(babyName, daysBack) {
+  const dailyBehavior = getDailyBehavior(babyName)
+
 }
 
 function getDailyBehavior(name) {
@@ -146,6 +154,7 @@ module.exports = {
   prepareDailyData,
   prepareLastXDaysData,
   updateData,
-  prepareMoodData
+  prepareMoodData,
+  preparePolarFeedingData
 }
 

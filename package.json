@@ -23,6 +23,7 @@
   "dependencies": {
     "convert-time": "^0.3.0",
     "dateformat": "^3.0.3",
-    "highcharts": "^6.1.0"
+    "highcharts": "^6.1.0",
+    "lodash": "^4.17.10"
   }
 }
