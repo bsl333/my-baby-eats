@@ -56,25 +56,25 @@ const data = [
           },
           {
             time: '2:00 PM',
-            formulaQty: 1,
+            formulaQty: 2.5,
             solidFoods: ['eggs'],
             mood: 'fussy'
           },
           {
             time: '6:00 PM',
-            formulaQty: 5,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'fussy'
           },
           {
             time: '9:00 PM',
-            formulaQty: 4,
+            formulaQty: 2.5,
             solidFoods: [''],
             mood: 'happy'
           },
           {
             time: '11:45 PM',
-            formulaQty: 4,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -106,7 +106,7 @@ const data = [
           },
           {
             time: '6:00 PM',
-            formulaQty: 5,
+            formulaQty: 3.5,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -144,7 +144,7 @@ const data = [
           },
           {
             time: '2:00 PM',
-            formulaQty: 5,
+            formulaQty: 3,
             solidFoods: ['eggs'],
             mood: 'meh'
           },
@@ -156,13 +156,13 @@ const data = [
           },
           {
             time: '9:00 PM',
-            formulaQty: 2,
+            formulaQty: 4,
             solidFoods: [''],
             mood: 'happy'
           },
           {
             time: '11:45 PM',
-            formulaQty: 8,
+            formulaQty: 5,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -194,7 +194,7 @@ const data = [
           },
           {
             time: '6:00 PM',
-            formulaQty: 5,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -206,7 +206,7 @@ const data = [
           },
           {
             time: '11:45 PM',
-            formulaQty: 8,
+            formulaQty: 4,
             solidFoods: [''],
             mood: 'meh'
           },
@@ -226,13 +226,13 @@ const data = [
           },
           {
             time: '11:45 AM',
-            formulaQty: 6,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'meh'
           },
           {
             time: '2:00 PM',
-            formulaQty: 5,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -250,7 +250,7 @@ const data = [
           },
           {
             time: '11:45 PM',
-            formulaQty: 8,
+            formulaQty: 3,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -294,7 +294,7 @@ const data = [
           },
           {
             time: '11:45 PM',
-            formulaQty: 8,
+            formulaQty: 6,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -338,7 +338,7 @@ const data = [
           },
           {
             time: '11:45 PM',
-            formulaQty: 8,
+            formulaQty: 6,
             solidFoods: [''],
             mood: 'happy'
           },
@@ -389,7 +389,97 @@ const data = [
         ],
         overAllMood: 'Happy',
         notes: 'Happy baby today!'
-      }
+      },
+
+      {
+        date: '6-5-2018',
+        foodIntake: [
+          {
+            time: '9:00 AM',
+            formulaQty: 3,
+            solidFoods: [''],
+            mood: 'meh'
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 1,
+            solidFoods: [''],
+            mood: 'happy'
+          },
+          {
+            time: '2:00 PM',
+            formulaQty: 3.5,
+            solidFoods: ['eggs'],
+            mood: 'happy'
+          },
+          {
+            time: '6:00 PM',
+            formulaQty: 5,
+            solidFoods: [''],
+            mood: 'meh'
+          },
+          {
+            time: '9:00 PM',
+            formulaQty: 2,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 8,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+        ],
+        overAllMood: 'Happy',
+        notes: 'Happy baby today!'
+      },
+
+      {
+        date: '6-6-2018',
+        foodIntake: [
+          {
+            time: '9:00 AM',
+            formulaQty: 3,
+            solidFoods: [''],
+            mood: 'meh'
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 1,
+            solidFoods: [''],
+            mood: 'happy'
+          },
+          {
+            time: '2:00 PM',
+            formulaQty: 5,
+            solidFoods: ['eggs'],
+            mood: 'happy'
+          },
+          {
+            time: '6:00 PM',
+            formulaQty: 5,
+            solidFoods: [''],
+            mood: 'meh'
+          },
+          {
+            time: '9:00 PM',
+            formulaQty: 2,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 8,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+        ],
+        overAllMood: 'Happy',
+        notes: 'Happy baby today!'
+      },
+
+      
     ]
   },
 

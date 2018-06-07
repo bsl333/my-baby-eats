@@ -212,7 +212,8 @@ function updateAdditionalInfo(solidFoods, qtyConsumed, isAvg = false) {
 function setDefaultChartContainer() {
   console.log('called')
   const h2 = document.createElement('h2')
-  h2.textContent = `Please enter data below to render today's plot`
+  h2.textContent = `Please fill in behavior information below to create today's plot`
+  h2.style.fontFamily = 'Lobster'
   const chartsContainer = document.getElementById('charts-container')
   chartsContainer.innerHTML = ''
   chartsContainer.appendChild(h2)
