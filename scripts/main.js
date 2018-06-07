@@ -35,7 +35,7 @@ buttons.forEach(btn => {
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   const date = dateFormat(now, 'm-d-yyyy')
-  let time = convertTime(event.target.time.value).toUpperCase()
+  time = convertTime(event.target.time.value).toUpperCase()
   console.log('time', time)
    
   const mood = event.target.mood.value
@@ -51,9 +51,11 @@ form.addEventListener('submit', (event) => {
     },
     notes
   }
+  const newTime = dateFormat(now, 'HH:MM')
   render.setLocalStorage(date, babyBehaviorObj)
   render.updatePlot(babyName, date, babyBehaviorObj)
-
+  render.clearFormInputs(newTime)
+  
   // simulate a click event to not have to rewrite my click event
   var simulateClick = function (elem) {
     // Create our event (with options)
@@ -67,7 +69,7 @@ form.addEventListener('submit', (event) => {
   };
   const oneDay = document.querySelector('#one-day')
   simulateClick(oneDay)
-  
+
   
 })
 

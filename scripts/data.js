@@ -20,19 +20,19 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Chicken'],
+            solidFoods: ['chicken'],
             mood: 'meh'
           },
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['Chicken'],
+            solidFoods: ['chicken'],
             mood: 'happy'
           },
           {
             time: '9:00 PM',
             formulaQty: 4,
-            solidFoods: ['Chicken'],
+            solidFoods: ['chicken'],
             mood: 'happy'
           },
         ],
@@ -57,7 +57,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'fussy'
           },
           {
@@ -101,7 +101,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 1,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'happy'
           },
           {
@@ -145,7 +145,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'meh'
           },
           {
@@ -189,7 +189,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'fussy'
           },
           {
@@ -239,7 +239,7 @@ const data = [
           {
             time: '6:00 PM',
             formulaQty: 5,
-            solidFoods: ['Chicken'],
+            solidFoods: ['chicken'],
             mood: 'fussy'
           },
           {
@@ -277,7 +277,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Sweet Potato'],
+            solidFoods: ['sweet potatoe'],
             mood: 'meh'
           },
           {
@@ -321,7 +321,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'fussy'
           },
           {
@@ -365,7 +365,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['Eggs'],
+            solidFoods: ['eggs'],
             mood: 'happy'
           },
           {
@@ -412,17 +412,17 @@ const data = [
           {
             time: '1:00 PM',
             formulaQty: 0,
-            solidFoods: ['Chicken']
+            solidFoods: ['chicken']
           },
           {
             time: '4:00 PM',
             formulaQty: 4,
-            solidFoods: ['Chicken']
+            solidFoods: ['chicken']
           },
           {
             time: '7:30 PM',
             formulaQty: 8,
-            solidFoods: ['Chicken']
+            solidFoods: ['chicken']
           },
         ],
         overAllMood: 'Happy',

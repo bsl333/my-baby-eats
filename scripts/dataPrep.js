@@ -25,8 +25,9 @@ function prepareDailyData(babyName, date) {
   foodIntake.forEach(foodObj => {
     xAxis.push(foodObj.time)
     yAxis.push(foodObj.formulaQty)
-    foodObj.solidFoods.map(val => {
-      val ? (solidFoods.indexOf(val) === -1 ? solidFoods.push(val) : null): null
+    const solidFoodsArr = foodObj.solidFoods
+    solidFoodsArr.map(val => {
+      val ? (solidFoods.indexOf(val.toLocaleLowerCase()) === -1 ? solidFoods.push(val) : null): null
     })
   })
   

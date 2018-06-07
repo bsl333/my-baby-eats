@@ -219,6 +219,19 @@ function setDefaultChartContainer() {
   chartsContainer.className = 'text-center'
 }
 
+function clearFormInputs(time) {
+  document.getElementById('time').value = time
+  document.getElementById('qty-consumed').value = null
+  document.getElementById('solids-consumed').value = ''
+  Array.from(document.getElementById('radio-buttons').children).forEach(btn => {
+    btn.classList.remove('active')
+    btn.style.color = 'black'
+  })
+  document.getElementById('notes').value = ''
+
+  // document.getElementById('')
+}
+
 
 
 module.exports = {
@@ -228,5 +241,6 @@ module.exports = {
   moodPlot,
   polarFeedingPlot,
   setLocalStorage,
-  initiatePlotFromLocalStorage
+  initiatePlotFromLocalStorage,
+  clearFormInputs
 }

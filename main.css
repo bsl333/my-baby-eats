@@ -44,3 +44,7 @@ body {
   color: pink;
   text-decoration: underline; 
 }
+
+ul {
+  text-transform: capitalize;
+}
