@@ -57,8 +57,6 @@ const weeklyPlot = (babyName, daysBack) => {
   } = dataPrep.prepareLastXDaysData(babyName, daysBack)
   updateAdditionalInfo(solidFoods, avgQtyConsumed, true)
 
-  console.log('x-axis: ', xAxis)
-  console.log('y-axis: ', yAxis)
 
   if (error) return 'BABY NOT FOUND!'
   Highcharts.chart('charts-container', {
@@ -100,7 +98,6 @@ const moodPlot = (babyName, daysBack, todaysDate) => {
     error
   } = dataPrep.prepareMoodData(babyName, daysBack, todaysDate)
   if (error) {
-    console.log(error)
     setDefaultChartContainer()
   }
   Highcharts.chart('charts-container', {
@@ -210,7 +207,6 @@ function updateAdditionalInfo(solidFoods, qtyConsumed, isAvg = false) {
 }
 
 function setDefaultChartContainer() {
-  console.log('called')
   const h2 = document.createElement('h2')
   h2.textContent = `Please fill in behavior information below to create today's plot`
   h2.style.fontFamily = 'Lobster'

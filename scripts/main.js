@@ -3,8 +3,6 @@ const dateFormat = require('dateformat')
 const convertTime = require('convert-time')
 const babyName = 'Grayson'
 
-// console.log(render.dayPlot('Grayson', '5-27-2018'))
-
 const buttons = Array.from(document.querySelectorAll('.btn-outline-primary'))
 const form = document.getElementById('user-input')
 const radioBtns = Array.from(document.querySelectorAll('.radio-group'))
@@ -36,7 +34,6 @@ form.addEventListener('submit', (event) => {
   event.preventDefault()
   const date = dateFormat(now, 'm-d-yyyy')
   time = convertTime(event.target.time.value).toUpperCase()
-  console.log('time', time)
    
   const mood = event.target.mood.value
   const formulaQty = +event.target['qty-consumed'].value

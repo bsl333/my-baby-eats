@@ -105,7 +105,6 @@ function prepareMoodData(babyName, daysBack, todaysDate) {
   const xAxis = []
   const yAxis = []
   const moodsLogged = Object.values(moodFreqObj).length ? Object.values(moodFreqObj).reduce((accum, val) => accum + val) : null
-  console.log(moodsLogged)
 
   for (let key in moodFreqObj) {
     xAxis.push(key)
@@ -114,7 +113,6 @@ function prepareMoodData(babyName, daysBack, todaysDate) {
   }
 
   const title = `${babyName}'s mood behavior from the last ${daysBack > 1 ? daysBack + ' days' : daysBack + ' day'}`
-  console.log(moodFreqObj)
 
   return { xAxis, yAxis, title }
 }
