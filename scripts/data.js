@@ -277,7 +277,7 @@ const data = [
           {
             time: '2:00 PM',
             formulaQty: 5,
-            solidFoods: ['sweet potatoe'],
+            solidFoods: ['sweet potato'],
             mood: 'meh'
           },
           {
