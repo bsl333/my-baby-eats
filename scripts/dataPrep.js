@@ -5,13 +5,14 @@ function prepareDailyData(babyName, date) {
   const xAxis = []
   const yAxis = []
   let solidFoods = []
+  const foodSet = new Set()
   const title = `${date} Formula Consumption for ${babyName}`
   const dailyBehavior = getDailyBehavior(babyName)
 
   if (!dailyBehavior) return { error: 'ERROR' }
   const foodIntake = getFoodIntakeOnDate(babyName, date)
-  if (!foodIntake){
-    return { xAxis, yAxis, title, qtyConsumed: 0 , error: 'ERROR no Food Intake for today' }
+  if (!foodIntake) {
+    return { xAxis, yAxis, title, qtyConsumed: 0, error: 'ERROR no Food Intake for today' }
   }
   // Sort array to acct for user input
   foodIntake.sort((a, b) => {
@@ -26,11 +27,21 @@ function prepareDailyData(babyName, date) {
     xAxis.push(foodObj.time)
     yAxis.push(foodObj.formulaQty)
     const solidFoodsArr = foodObj.solidFoods
-    solidFoodsArr.map(val => {
-      val ? (solidFoods.indexOf(val.toLocaleLowerCase()) === -1 ? solidFoods.push(val) : null): null
+
+
+    solidFoodsArr.map(food => {
+      // val ? (solidFoods.indexOf(val.toLocaleLowerCase()) === -1 ? solidFoods.push(val) : null): null
+      if (food) {
+        foodSet.add(food.toLowerCase())
+      }
     })
   })
-  
+  for (let food of foodSet) {
+    solidFoods.push(food)
+  }
+
+
+
   const qtyConsumed = yAxis.reduce((accum, val) => accum + val)
   const highchartsPlotObj = { xAxis, yAxis, title, solidFoods, qtyConsumed }
   return highchartsPlotObj
@@ -55,14 +66,15 @@ function prepareDailyData(babyName, date) {
 //   return highchartsPlotObj
 // }
 
-function prepareLastXDaysData (babyName, daysBack) {
+function prepareLastXDaysData(babyName, daysBack) {
   const dailyBehavior = getDailyBehavior(babyName)
-  if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
+  if (!dailyBehavior) return { error: 'ERROR getting dailyBehavior' }
   const behaviors = dailyBehavior.slice(-1 * daysBack)
 
   const xAxis = []
   const yAxis = []
   let solidFoods = []
+  const foodSet = new Set()
 
   behaviors.forEach(day => {
     xAxis.push(day.date)
@@ -74,30 +86,38 @@ function prepareLastXDaysData (babyName, daysBack) {
       .map(val => val.solidFoods)
 
     // find unique solid foods and push onto solid food array
+
     solidFoodsArr.forEach(val => {
-      val.forEach(food => 
-        food ? (solidFoods.indexOf(food) === -1 ? solidFoods.push(food) : null) : null)
+      val.forEach(food => {
+        if (food) foodSet.add(food.toLowerCase())
+      })
+
     })
   })
+
+  for (let food of foodSet) {
+    solidFoods.push(food)
+
+  }
   const title = `${xAxis[0].split('-', 2).join('-')} Thru ${xAxis.slice(-1)[0]} Formula Consumption for ${babyName}`
   const avgQtyConsumed = yAxis.reduce((accum, val) => accum + val) / yAxis.length
-  return { xAxis, yAxis, title, solidFoods, avgQtyConsumed } 
+  return { xAxis, yAxis, title, solidFoods, avgQtyConsumed }
 
 }
 
 function prepareMoodData(babyName, daysBack, todaysDate) {
   const dailyBehavior = getDailyBehavior(babyName)
-  if (!dailyBehavior) return {error: 'ERROR getting dailyBehavior'}
+  if (!dailyBehavior) return { error: 'ERROR getting dailyBehavior' }
   const behaviors = dailyBehavior.slice(-1 * daysBack)
   if (daysBack === 1 && behaviors[0].date !== todaysDate) {
     return { error: 'no mood data is available' }
   }
-  const moodFreqObj = { }
+  const moodFreqObj = {}
   behaviors.forEach(day => {
     const moods = day.foodIntake.map(val => val.mood)
     moods.forEach(mood => {
       if (mood) {
-        moodFreqObj[mood] = moodFreqObj[mood] ? ++moodFreqObj[mood] : 1 
+        moodFreqObj[mood] = moodFreqObj[mood] ? ++moodFreqObj[mood] : 1
       }
     })
   })
@@ -128,7 +148,7 @@ function getDailyBehavior(name) {
 }
 
 function getFoodIntakeOnDate(babyName, date) {
-  const dailyBehavior= getDailyBehavior(babyName)
+  const dailyBehavior = getDailyBehavior(babyName)
   const foodIntake = dailyBehavior.find(val => val.date === date)
   return foodIntake ? foodIntake.foodIntake : null
 }
@@ -140,11 +160,11 @@ function updateData(babyName, date, { foodIntake, mood, notes }) {
     dayBehavior.foodIntake.push(foodIntake)
     dayBehavior.notes += `\n${notes}`
   } else {
-    dayBehavior = { 
+    dayBehavior = {
       date,
-      'foodIntake': Array.isArray(foodIntake) ? foodIntake : [ foodIntake ],
-      notes  
-    }  
+      'foodIntake': Array.isArray(foodIntake) ? foodIntake : [foodIntake],
+      notes
+    }
     dailyBehavior.push(dayBehavior)
   }
 }
