@@ -479,6 +479,50 @@ const data = [
         notes: 'Happy baby today!'
       },
 
+      {
+        date: '6-7-2018',
+        foodIntake: [
+          {
+            time: '9:00 AM',
+            formulaQty: 3,
+            solidFoods: [''],
+            mood: 'happy'
+          },
+          {
+            time: '11:45 AM',
+            formulaQty: 1,
+            solidFoods: [''],
+            mood: 'happy'
+          },
+          {
+            time: '2:00 PM',
+            formulaQty: 5,
+            solidFoods: ['eggs'],
+            mood: 'happy'
+          },
+          {
+            time: '6:00 PM',
+            formulaQty: 5,
+            solidFoods: [''],
+            mood: 'meh'
+          },
+          {
+            time: '9:00 PM',
+            formulaQty: 2,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+          {
+            time: '11:45 PM',
+            formulaQty: 7,
+            solidFoods: [''],
+            mood: 'fussy'
+          },
+        ],
+        overAllMood: 'Happy',
+        notes: 'Happy baby today!'
+      },
+
       
     ]
   },

@@ -11,6 +11,7 @@ function prepareDailyData(babyName, date) {
 
   if (!dailyBehavior) return { error: 'ERROR' }
   const foodIntake = getFoodIntakeOnDate(babyName, date)
+  console.log(date)
   if (!foodIntake) {
     return { xAxis, yAxis, title, qtyConsumed: 0, error: 'ERROR no Food Intake for today' }
   }

@@ -73,7 +73,7 @@ form.addEventListener('submit', (event) => {
 radioBtns.forEach(btn => {
   btn.addEventListener('click', (event) => {
     radioBtns.forEach(btn => btn.style.color = 'black')
-    btn.style.color = 'pink'
+    btn.style.color = 'pink'    
   })
 })
 
