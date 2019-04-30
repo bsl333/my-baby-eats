@@ -2,7 +2,7 @@
 This application monitors an infant's baby formula intake throughout the day, then dynamically plotting information in real-time using HighCharts. The application can also keep track of solid foods that your child has consumed over a given duration, as well as their mood throughout the day. 
 
 ### Motivation
-After being exposed to newborns in my family and observing how they tracking food intake (with pen and paper!), I thought it would be a fun and useful to create a front-end application that would keep track of their child's baby formula intake. It also seemed very practical since this information is important to the child's doctor - to ensure the child is not consuming too little or too much food - and it also makes it very easy to share this information with the doctor. 
+After being exposed to newborns in my family and observing how they tracked food intake (with pen and paper!), I thought it would be a fun and useful to create a front-end application that would keep track of their child's baby formula intake. It also seemed very practical since this information is important to the child's doctor - to ensure the child is not consuming too little or too much food - and it also makes it very easy to share this information with the doctor. 
 
 ### How to use
 
